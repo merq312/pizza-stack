@@ -1,0 +1,16 @@
+.card {
+  height: 60rem;
+  margin: 1rem;
+
+  grid-column: span 2;
+
+  border-radius: 20px;
+  border: solid 1px #eaeaea;
+  background: #fafafa;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card:active,
+.card:hover {
+  border-color: #ca2521;
+}
