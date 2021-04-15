@@ -1,0 +1,43 @@
+/* #ECA442 #CA2521 #61120E */
+
+.header {
+  background-color: #ca2521;
+  color: white;
+  width: 100%;
+  height: 16vh;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 6rem;
+  display: block;
+  margin-left: 2rem;
+  padding: 4rem;
+}
+
+.links {
+  display: flex;
+  margin-right: 2rem;
+  justify-content: space-evenly;
+}
+
+.link {
+  font-size: 2.4rem;
+  display: block;
+  padding: 4rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.link:hover {
+  transform: scale(1.1);
+}
+
+.link:active {
+  transform: scale(1.1) translateY(2px);
+}
