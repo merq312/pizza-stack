@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
+import Link from 'next/link'
 import styles from './cart.module.scss'
 
 const selectCartItems = () => {
@@ -37,7 +38,9 @@ const Cart = () => {
           </div>
         ))}
       </div>
-      <div className={styles.checkout}>Checkout</div>
+      <Link href="/checkout">
+        <div className={styles.checkout}>Checkout</div>
+      </Link>
     </div>
   )
 }

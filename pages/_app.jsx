@@ -22,7 +22,10 @@ function MyApp({ Component, pageProps }) {
         </Head>
 
         <Header />
-        <Component {...pageProps} />
+
+        <div className="container">
+          <Component {...pageProps} />
+        </div>
         <Footer />
       </Provider>
     </>

@@ -13,13 +13,11 @@ export const getStaticProps = async () => {
 
 const Home = ({ menuList }) => {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        {menuList.map((menuList) => (
-          <Card key={menuList.id} {...menuList} />
-        ))}
-      </main>
-    </div>
+    <main className={styles.main}>
+      {menuList.map((menuList) => (
+        <Card key={menuList.id} {...menuList} />
+      ))}
+    </main>
   )
 }
 
@@ -31,7 +29,7 @@ TODO
 + Set up global grid css layout
 + Design pizza item card
 + Write json data for menu items
-- Cart functionality
++ Cart functionality
 - Order/checkout page
 - SVG icons on header
 - Sign in/up functionality
