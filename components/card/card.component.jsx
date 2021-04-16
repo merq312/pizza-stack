@@ -1,12 +1,12 @@
 import styles from './card.module.css'
 
-const Card = () => {
+const Card = (menuList) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <img src="./pizza-1.jpg" alt="pizza-1" />
+        <img src={menuList.url} alt={menuList.alt} />
       </div>
-      <div className={styles.itemName}>Classic Pepperoni</div>
+      <div className={styles.itemName}>{menuList.name}</div>
       <div className={styles.cartButton}>
         <div className={styles.cartText}>Add to Cart</div>
       </div>
