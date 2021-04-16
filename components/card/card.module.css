@@ -1,6 +1,7 @@
 .card {
   height: 60rem;
   margin: 1rem;
+  overflow: hidden;
 
   grid-column: span 2;
 
@@ -8,9 +9,51 @@
   border: solid 1px #eaeaea;
   background: #fafafa;
   transition: color 0.15s ease, border-color 0.15s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:active,
 .card:hover {
   border-color: #ca2521;
+}
+
+.imageContainer {
+  height: 70%;
+}
+
+.imageContainer img {
+  display: block;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.cartButton {
+  height: 20%;
+  background-color: #eaeaea;
+  transition: all 0.15s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartButton:hover,
+.cartButton:active {
+  background-color: #ca2521;
+}
+
+.cartText {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 4rem;
+  color: #fff;
+}
+
+.itemName {
+  font-size: 3rem;
+  color: #ca2521;
 }
