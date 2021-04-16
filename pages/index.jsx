@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Card from '../components/card/card.component'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 import { menu } from '../data/data'
 
