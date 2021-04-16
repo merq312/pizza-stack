@@ -42,6 +42,8 @@ TODO
 + Design pizza item card
 + Write json data for menu items
 - Cart functionality
+- SVG icons on header
 - Order/checkout page
 - Sign in/up functionality
+- Redo card css
 */
