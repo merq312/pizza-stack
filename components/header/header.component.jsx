@@ -1,7 +1,36 @@
+import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
 import Link from 'next/link'
+import Cart from '../cart/cart.component'
 import styles from './header.module.scss'
 
+// NOTE: Should this be memoized?
+const selectCartItemsCount = () => {
+  const count = useSelector((state) =>
+    state.cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0)
+  )
+  return { count }
+}
+
+/*
+const useCounter = () => {
+  const count = useSelector((state) => state.count)
+  const dispatch = useDispatch()
+
+  const increment = () =>
+    dispatch({
+      type: 'INCREMENT',
+    })
+
+  return { count, increment }
+}
+*/
+
 const Header = () => {
+  const { count } = selectCartItemsCount()
+  const [cartHidden, toggleCartHidden] = useState(1)
+
   return (
     <header className={styles.header}>
       <Link href="/">
@@ -17,12 +46,16 @@ const Header = () => {
         <Link href="https://github.com/merq312/urban-barnacle">
           <a className={styles.link}>Contact</a>
         </Link>
-        <Link href="/">
-          <a className={styles.link}>Cart</a>
-        </Link>
-        <Link href="/">
-          <a className={styles.link}>Sign In</a>
-        </Link>
+        <div className={styles.cartContainer}>
+          <div
+            className={styles.link}
+            onClick={() => toggleCartHidden(!cartHidden)}
+          >
+            Cart ({count})
+          </div>
+          {cartHidden ? null : <Cart />}
+        </div>
+        <div className={styles.link}>Sign In</div>
       </div>
     </header>
   )

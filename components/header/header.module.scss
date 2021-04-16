@@ -55,6 +55,7 @@
   display: block;
   padding: 0 4rem;
   transition: all 0.2s ease;
+  cursor: pointer;
   white-space: nowrap;
 
   &:hover {
@@ -64,4 +65,8 @@
   &:active {
     transform: scale(1.1) translateY(2px);
   }
+}
+
+.cartContainer {
+  position: relative;
 }
