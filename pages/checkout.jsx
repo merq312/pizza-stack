@@ -23,7 +23,7 @@ const Checkout = () => {
   const removeItem = removeItemFromCart()
 
   return (
-    <div className={styles.checkout}>
+    <main className={styles.main}>
       <div className={styles.pageTitle}>Checkout</div>
       <div className={styles.separator} />
 
@@ -45,7 +45,7 @@ const Checkout = () => {
       <div className={styles.pageTitle}>Your Details</div>
       <div className={styles.separator} />
       <UserForm />
-    </div>
+    </main>
   )
 }
 

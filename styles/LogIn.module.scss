@@ -1,0 +1,28 @@
+.main {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+}
+
+.pageTitle {
+  color: #ca2521;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 3rem;
+}
+
+.vertseparator {
+  height: 100%;
+  width: 1px;
+  background-color: #ca2521;
+  margin: 2rem;
+}
+
+.LogIn {
+  height: 50rem;
+}
+
+.signUp {
+  height: 50rem;
+}

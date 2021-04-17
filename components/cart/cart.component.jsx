@@ -17,9 +17,10 @@ const removeItemFromCart = () => {
     })
 }
 
-const Cart = () => {
+const Cart = ({ cartToggle }) => {
   const { cartItems } = selectCartItems()
   const removeItem = removeItemFromCart()
+  const { cartHidden, toggleCartHidden } = cartToggle()
 
   return (
     <div className={styles.cart}>
@@ -39,7 +40,9 @@ const Cart = () => {
         ))}
       </div>
       <Link href="/checkout">
-        <div className={styles.checkout}>Checkout</div>
+        <div className={styles.checkout} onClick={() => toggleCartHidden()}>
+          Checkout
+        </div>
       </Link>
     </div>
   )

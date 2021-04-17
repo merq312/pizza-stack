@@ -29,4 +29,28 @@ export const menu = [
     alt: 'pizza-beef',
     url: 'pizza-5.jpg',
   },
+  {
+    id: 5,
+    name: 'Avocado Pesto',
+    alt: 'pizza-avocada',
+    url: 'pizza-6.jpg',
+  },
+  {
+    id: 6,
+    name: 'Olive Anchovy',
+    alt: 'pizza-anchovy',
+    url: 'pizza-7.jpg',
+  },
+  {
+    id: 7,
+    name: 'Pepper Zucchini',
+    alt: 'pizza-zucchini',
+    url: 'pizza-8.jpg',
+  },
+  {
+    id: 8,
+    name: 'Lemon Tuna',
+    alt: 'pizza-tuna',
+    url: 'pizza-9.jpg',
+  },
 ]

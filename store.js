@@ -7,6 +7,7 @@ let store
 const initialState = {
   count: 0,
   cartItems: [],
+  cartHidden: 1,
 }
 
 const addItemToCart = (cartItems, itemToAdd) => {
@@ -38,6 +39,11 @@ const reducer = (state = initialState, action) => {
         cartItems: state.cartItems.filter(
           (cartItem) => cartItem.id !== action.payload
         ),
+      }
+    case 'TOGGLE_CART_HIDDEN':
+      return {
+        ...state,
+        cartHidden: !state.cartHidden,
       }
     default:
       return state

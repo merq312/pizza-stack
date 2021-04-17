@@ -22,16 +22,3 @@ const Home = ({ menuList }) => {
 }
 
 export default Home
-
-/*
-TODO
----
-+ Set up global grid css layout
-+ Design pizza item card
-+ Write json data for menu items
-+ Cart functionality
-- Order/checkout page
-- SVG icons on header
-- Sign in/up functionality
-- Redo card css
-*/

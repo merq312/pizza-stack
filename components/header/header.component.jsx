@@ -1,9 +1,21 @@
-import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import Link from 'next/link'
+import { useUser } from '../../lib/hooks'
 import Cart from '../cart/cart.component'
 import styles from './header.module.scss'
+
+const cartToggle = () => {
+  const cartHidden = useSelector((state) => state.cartHidden)
+  const dispatch = useDispatch()
+
+  const toggleCartHidden = () =>
+    dispatch({
+      type: 'TOGGLE_CART_HIDDEN',
+    })
+
+  return { cartHidden, toggleCartHidden }
+}
 
 // NOTE: Should this be memoized?
 const selectCartItemsCount = () => {
@@ -28,8 +40,9 @@ const useCounter = () => {
 */
 
 const Header = () => {
+  const user = useUser()
   const { count } = selectCartItemsCount()
-  const [cartHidden, toggleCartHidden] = useState(1)
+  const { cartHidden, toggleCartHidden } = cartToggle()
 
   return (
     <header className={styles.header}>
@@ -53,9 +66,17 @@ const Header = () => {
           >
             Cart ({count})
           </div>
-          {cartHidden ? null : <Cart />}
+          {cartHidden ? null : <Cart cartToggle={cartToggle} />}
         </div>
-        <div className={styles.link}>Sign In</div>
+        {user ? (
+          <Link href="/api/logout">
+            <div className={styles.link}>Log Out</div>
+          </Link>
+        ) : (
+          <Link href="/login">
+            <div className={styles.link}>Log In</div>
+          </Link>
+        )}
       </div>
     </header>
   )
