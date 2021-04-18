@@ -32,6 +32,7 @@ a {
 
 .container {
   display: grid;
+  background-image: url('../public/criss-cross.png');
 
   grid-template-columns:
     [full-start] minmax(6rem, 1fr)

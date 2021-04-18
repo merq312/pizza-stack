@@ -1,5 +1,5 @@
 .card {
-  height: 60rem;
+  height: 55rem;
   margin: 1rem;
   overflow: hidden;
 
@@ -8,7 +8,7 @@
   border-radius: 20px;
   border: solid 1px #eaeaea;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: #fafafa;
+  background-color: #ececec;
   transition: color 0.15s ease, border-color 0.15s ease;
 
   display: flex;
@@ -22,35 +22,105 @@
 }
 
 .imageContainer {
-  height: 70%;
+  height: 75%;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.5) 80%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+  }
 
   img {
     display: block;
     object-fit: cover;
     height: 100%;
     width: 100%;
+    z-index: -1;
+  }
+
+  .itemPrice {
+    position: absolute;
+    font-size: 6rem;
+    color: #fff;
+    z-index: 10;
+    font-weight: bold;
+    bottom: 0;
+    right: 0;
+    padding-right: 1rem;
+  }
+
+  .value {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #ca2521;
+    z-index: 10;
+
+    width: 16rem;
+    top: 2rem;
+    left: -4.5rem;
+    // transform: rotate(-45deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: rotate(-45deg);
+  }
+
+  .vegetarian {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #039422;
+    z-index: 10;
+
+    width: 16rem;
+    top: 2rem;
+    left: -4.5rem;
+    // transform: rotate(-45deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: rotate(-45deg);
   }
 }
 
 .cartButton {
-  height: 20%;
+  height: 15%;
   background-color: #dadada;
   transition: all 0.15s ease;
 
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.cartButton:hover,
-.cartButton:active {
-  background-color: #ca2521;
+  &:hover,
+  &:active {
+    background-color: #ca2521;
+  }
 }
 
 .cartText {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 3rem;
   color: #fff;
 }
 
