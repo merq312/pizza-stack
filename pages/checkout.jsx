@@ -1,33 +1,25 @@
-import { useSelector, useDispatch } from 'react-redux'
 import UserForm from '../components/user-form/user-form.component'
-
+import {
+  selectCartItems,
+  removeItemFromCart,
+  selectCartItemsCount,
+} from '../redux/selectors'
 import styles from '../styles/Checkout.module.scss'
 import utilStyles from '../styles/utils.module.scss'
-
-const selectCartItems = () => {
-  const cartItems = useSelector((state) => state.cartItems)
-  return { cartItems }
-}
-
-const removeItemFromCart = () => {
-  const dispatch = useDispatch()
-
-  return (id) =>
-    dispatch({
-      type: 'REMOVE_FROM_CART',
-      payload: id,
-    })
-}
 
 const Checkout = () => {
   const { cartItems } = selectCartItems()
   const removeItem = removeItemFromCart()
+  const { count } = selectCartItemsCount()
 
   return (
     <main className={styles.main}>
       <div className={styles.pageTitle}>Checkout</div>
       <div className={utilStyles.separator} />
 
+      {count ? null : (
+        <div className={utilStyles.noItemsText}>No items in cart! :(</div>
+      )}
       {cartItems.map((cartItem) => (
         <div className={styles.cartItem} key={cartItem.id}>
           <img src={cartItem.url} alt={cartItem.alt} />

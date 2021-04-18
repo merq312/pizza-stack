@@ -1,43 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux'
-
+import { cartToggle, selectCartItemsCount } from '../../redux/selectors'
 import Link from 'next/link'
 import { useUser } from '../../lib/hooks'
 import Cart from '../cart/cart.component'
 import styles from './header.module.scss'
-
-const cartToggle = () => {
-  const cartHidden = useSelector((state) => state.cartHidden)
-  const dispatch = useDispatch()
-
-  const toggleCartHidden = () =>
-    dispatch({
-      type: 'TOGGLE_CART_HIDDEN',
-    })
-
-  return { cartHidden, toggleCartHidden }
-}
-
-// NOTE: Should this be memoized?
-const selectCartItemsCount = () => {
-  const count = useSelector((state) =>
-    state.cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0)
-  )
-  return { count }
-}
-
-/*
-const useCounter = () => {
-  const count = useSelector((state) => state.count)
-  const dispatch = useDispatch()
-
-  const increment = () =>
-    dispatch({
-      type: 'INCREMENT',
-    })
-
-  return { count, increment }
-}
-*/
 
 const Header = () => {
   const user = useUser()
@@ -66,7 +31,7 @@ const Header = () => {
           >
             Cart ({count})
           </div>
-          {cartHidden ? null : <Cart cartToggle={cartToggle} />}
+          {cartHidden ? null : <Cart cartToggle={cartToggle} count={count} />}
         </div>
         {user ? (
           <Link href="/api/logout">
