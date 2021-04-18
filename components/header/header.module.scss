@@ -46,6 +46,13 @@
   }
 }
 
+// Hack fix for mobile websit (links bar overflows device width)
+@supports (-webkit-touch-callout: none) {
+  .link {
+    width: 9.8rem;
+  }
+}
+
 .links {
   display: flex;
   margin-right: 2rem;
