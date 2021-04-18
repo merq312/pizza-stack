@@ -2,6 +2,8 @@
 
 Project for SYS1004 Deliverable 3
 
+Deployed at: https://pizza-stack.vercel.app/
+
 Currently functional:
 
 - Cart functionality
