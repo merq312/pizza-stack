@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux'
-import styles from '../styles/Checkout.module.scss'
-
 import UserForm from '../components/user-form/user-form.component'
+
+import styles from '../styles/Checkout.module.scss'
+import utilStyles from '../styles/utils.module.scss'
 
 const selectCartItems = () => {
   const cartItems = useSelector((state) => state.cartItems)
@@ -25,7 +26,7 @@ const Checkout = () => {
   return (
     <main className={styles.main}>
       <div className={styles.pageTitle}>Checkout</div>
-      <div className={styles.separator} />
+      <div className={utilStyles.separator} />
 
       {cartItems.map((cartItem) => (
         <div className={styles.cartItem} key={cartItem.id}>
@@ -41,9 +42,9 @@ const Checkout = () => {
         </div>
       ))}
 
-      <div className={styles.separator} />
+      <div className={utilStyles.separator} />
       <div className={styles.pageTitle}>Your Details</div>
-      <div className={styles.separator} />
+      <div className={utilStyles.separator} />
       <UserForm />
     </main>
   )

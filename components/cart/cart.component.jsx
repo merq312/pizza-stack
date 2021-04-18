@@ -40,7 +40,10 @@ const Cart = ({ cartToggle }) => {
         ))}
       </div>
       <Link href="/checkout">
-        <div className={styles.checkout} onClick={() => toggleCartHidden()}>
+        <div
+          className={styles.checkoutButton}
+          onClick={() => toggleCartHidden()}
+        >
           Checkout
         </div>
       </Link>

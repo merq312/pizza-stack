@@ -5,6 +5,7 @@
   color: white;
   width: 100%;
   font-weight: bold;
+  border-bottom: 4rem solid #61120e;
 
   display: grid;
 
@@ -30,6 +31,8 @@
   .header {
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 1fr;
+
+    border-bottom: none;
   }
 
   .title {

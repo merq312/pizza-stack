@@ -60,7 +60,7 @@
   cursor: pointer;
 }
 
-.checkout {
+.checkoutButton {
   width: 100%;
   background-color: #ca2521;
   font-size: 3rem;
@@ -69,4 +69,14 @@
   margin: 0 0.2rem;
   cursor: pointer;
   border-radius: 5px;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(1.02) translateY(2px);
+  }
 }

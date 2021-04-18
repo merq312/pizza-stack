@@ -4,6 +4,7 @@ import { useUser } from '../lib/hooks'
 import { Magic } from 'magic-sdk'
 
 import styles from '../styles/LogIn.module.scss'
+import utilStyles from '../styles/utils.module.scss'
 
 const LogIn = () => {
   useUser({ redirectTo: '/', redirectIfFound: true })
@@ -44,16 +45,17 @@ const LogIn = () => {
 
   return (
     <main className={styles.main}>
-      <form className={styles.logIn} onSubmit={handleSubmit}>
+      <form className={styles.loginForm} onSubmit={handleSubmit}>
         <div className={styles.pageTitle}>Sign Up / Log In</div>
-        <label>
-          <span>Email</span>
+        <div className={utilStyles.separator} />
+        <div>
+          <label>Email</label>
           <input type="email" name="email" required />
-        </label>
-
-        <div className="submit">
-          <button type="submit">Sign Up / Log In</button>
         </div>
+
+        <button type="submit" className={styles.loginButton}>
+          Sign Up / Log In
+        </button>
         {errorMsg && <p className="error">{errorMsg}</p>}
       </form>
     </main>

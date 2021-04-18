@@ -1,7 +1,7 @@
 .main {
   grid-column: center-start / center-end;
-  display: grid;
-  grid-template-columns: 1fr min-content 1fr;
+  display: flex;
+  flex-direction: row;
 }
 
 .pageTitle {
@@ -12,17 +12,57 @@
   margin-top: 3rem;
 }
 
-.vertseparator {
-  height: 100%;
-  width: 1px;
+.loginForm {
+  font-size: 2rem;
+  width: 80rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  div {
+    display: flex;
+    margin: 0.8rem 0;
+    align-items: center;
+  }
+
+  label {
+    flex: 0 0 20rem;
+    text-align: left;
+    padding: 0 2rem;
+  }
+
+  input {
+    flex: 1 1;
+    min-width: 0;
+    height: 5rem;
+    padding: 0 2rem;
+    background-color: #eaeaea;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+  }
+}
+
+.loginButton {
+  width: 30%;
+  align-self: end;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
   background-color: #ca2521;
-  margin: 2rem;
-}
+  font-size: 2rem;
+  text-align: center;
+  padding: 1.6rem;
+  margin: 2rem 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.2s ease;
 
-.LogIn {
-  height: 50rem;
-}
+  &:hover {
+    transform: scale(1.02);
+  }
 
-.signUp {
-  height: 50rem;
+  &:active {
+    transform: scale(1.02) translateY(2px);
+  }
 }
