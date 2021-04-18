@@ -6,6 +6,7 @@ Currently functional:
 
 - Cart functionality
 - Log in / Sign up (with Magic passwordless login)
+- Responsive layouts
 
 ## TODO
 
@@ -17,8 +18,8 @@ Currently functional:
 - [x] Sign in/up functionality
 - [x] Hide cart on checkout page
 - [ ] SVG icons on header
-- [ ] Add prices to items
-- [ ] Redo card css
+- [x] Add prices to items
+- [x] Redo card css
 - [ ] User database
 
 ## BUGS
