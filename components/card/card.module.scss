@@ -16,6 +16,13 @@
   justify-content: space-between;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .card {
+    height: 35rem;
+    grid-column: span 1;
+  }
+}
+
 .card:active,
 .card:hover {
   border-color: #ca2521;
@@ -106,8 +113,9 @@
 
 .cartButton {
   height: 15%;
-  background-color: #dadada;
+  background-color: #bbb;
   transition: all 0.15s ease;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;

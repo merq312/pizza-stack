@@ -25,6 +25,18 @@ export const selectCartItems = () => {
   return { cartItems }
 }
 
+export const selectCartTotal = () => {
+  const cartItems = useSelector((state) => state.cartItems)
+
+  const priceTotal = cartItems
+    .reduce((acc, cartItem) => {
+      return acc + cartItem.price * cartItem.quantity
+    }, 0)
+    .toFixed(2)
+
+  return { priceTotal }
+}
+
 export const removeItemFromCart = () => {
   const dispatch = useDispatch()
 

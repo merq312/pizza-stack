@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           <title>Pizza Stack</title>
           <link rel="icon" href="/favicon.ico" />
           <meta
-            http-equiv="Content-type"
+            httpEquiv="Content-type"
             name="viewport"
             content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width"
           />
