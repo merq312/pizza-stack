@@ -1,4 +1,8 @@
-import { selectCartItems, removeItemFromCart } from '../../redux/selectors'
+import {
+  selectCartItems,
+  removeItemFromCart,
+  selectCartTotal,
+} from '../../redux/selectors'
 import Link from 'next/link'
 import styles from './cart.module.scss'
 import utilStyles from '../../styles/utils.module.scss'
@@ -6,6 +10,7 @@ import utilStyles from '../../styles/utils.module.scss'
 const Cart = ({ cartToggle, count }) => {
   const { cartItems } = selectCartItems()
   const removeItem = removeItemFromCart()
+  const { priceTotal } = selectCartTotal()
   const { cartHidden, toggleCartHidden } = cartToggle()
   console.log(count)
 
@@ -33,14 +38,19 @@ const Cart = ({ cartToggle, count }) => {
           </div>
         ))}
       </div>
-      <Link href="/checkout">
-        <div
-          className={styles.checkoutButton}
-          onClick={() => toggleCartHidden()}
-        >
-          Checkout
+      <div>
+        <div className={styles.priceTotal}>
+          <span>Total</span> <span>${priceTotal}</span>
         </div>
-      </Link>
+        <Link href="/checkout">
+          <div
+            className={styles.checkoutButton}
+            onClick={() => toggleCartHidden()}
+          >
+            Checkout
+          </div>
+        </Link>
+      </div>
     </div>
   )
 }

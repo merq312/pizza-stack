@@ -30,6 +30,18 @@
   }
 }
 
+.priceTotal {
+  width: 100%;
+  font-size: 3rem;
+  color: #000;
+  background-color: #eaeaea;
+  margin: 0.4rem 0;
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .itemName {
   margin: 0 2rem;
 }

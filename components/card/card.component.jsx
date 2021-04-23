@@ -20,7 +20,7 @@ const Card = (item) => {
     <div className={styles.card}>
       <div className={styles.imageContainer}>
         <img src={item.url} alt={item.alt} />
-        <div className={styles.itemPrice}>{item.price}</div>
+        <div className={styles.itemPrice}>${item.price}</div>
         {item.value ? (
           <div className={styles.value}>
             <span>value</span>

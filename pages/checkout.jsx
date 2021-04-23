@@ -3,6 +3,7 @@ import {
   selectCartItems,
   removeItemFromCart,
   selectCartItemsCount,
+  selectCartTotal,
 } from '../redux/selectors'
 import styles from '../styles/Checkout.module.scss'
 import utilStyles from '../styles/utils.module.scss'
@@ -10,6 +11,7 @@ import utilStyles from '../styles/utils.module.scss'
 const Checkout = () => {
   const { cartItems } = selectCartItems()
   const removeItem = removeItemFromCart()
+  const { priceTotal } = selectCartTotal()
   const { count } = selectCartItemsCount()
 
   return (
@@ -17,9 +19,6 @@ const Checkout = () => {
       <div className={styles.pageTitle}>Checkout</div>
       <div className={utilStyles.separator} />
 
-      {count ? null : (
-        <div className={utilStyles.noItemsText}>No items in cart! :(</div>
-      )}
       {cartItems.map((cartItem) => (
         <div className={styles.cartItem} key={cartItem.id}>
           <img src={cartItem.url} alt={cartItem.alt} />
@@ -33,6 +32,14 @@ const Checkout = () => {
           </div>
         </div>
       ))}
+
+      {count ? (
+        <div className={styles.priceTotal}>
+          <span>Total</span> <span>${priceTotal}</span>
+        </div>
+      ) : (
+        <div className={utilStyles.noItemsText}>No items in cart! :(</div>
+      )}
 
       <div className={utilStyles.separator} />
       <div className={styles.pageTitle}>Your Details</div>
