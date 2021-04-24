@@ -15,7 +15,7 @@
 .cartItem {
   display: grid;
   align-items: center;
-  grid-template-columns: 10rem 1fr 3rem 3rem;
+  grid-template-columns: 10rem 1fr 8rem 4rem 4rem;
   font-size: 3rem;
   padding: 3rem;
   margin: 0.2rem;
@@ -27,6 +27,25 @@
     object-fit: cover;
     width: 10rem;
     height: 10rem;
+  }
+}
+
+.addRemoveItems {
+  font-size: 3rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: space-around;
+
+  span {
+    cursor: pointer;
+  }
+
+  span:first-child {
+    color: #ca2521;
+  }
+
+  span:last-child {
+    color: #61120e;
   }
 }
 
@@ -52,7 +71,7 @@
 
 .removeButton {
   color: #ca2521;
-  font-size: 2rem;
+  font-size: 3rem;
   justify-self: center;
   cursor: pointer;
 }

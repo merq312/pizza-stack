@@ -1,20 +1,8 @@
-import { useDispatch } from 'react-redux'
+import { addItemToCart } from '../../redux/selectors'
 import styles from './card.module.scss'
 
-const useCart = () => {
-  const dispatch = useDispatch()
-
-  const addToCart = (item) =>
-    dispatch({
-      type: 'ADD_TO_CART',
-      payload: item,
-    })
-
-  return { addToCart }
-}
-
 const Card = (item) => {
-  const { addToCart } = useCart()
+  const addItem = addItemToCart()
 
   return (
     <div className={styles.card}>
@@ -33,7 +21,7 @@ const Card = (item) => {
         ) : null}
       </div>
       <div className={styles.itemName}>{item.name}</div>
-      <div className={styles.cartButton} onClick={() => addToCart(item)}>
+      <div className={styles.cartButton} onClick={() => addItem(item)}>
         <div className={styles.cartText}>Add to Cart</div>
       </div>
     </div>

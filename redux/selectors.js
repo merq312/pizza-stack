@@ -37,6 +37,26 @@ export const selectCartTotal = () => {
   return { priceTotal }
 }
 
+export const addItemToCart = () => {
+  const dispatch = useDispatch()
+
+  return (item) =>
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: item,
+    })
+}
+
+export const removeOneItemFromCart = () => {
+  const dispatch = useDispatch()
+
+  return (item) =>
+    dispatch({
+      type: 'REMOVE_ONE_FROM_CART',
+      payload: item,
+    })
+}
+
 export const removeItemFromCart = () => {
   const dispatch = useDispatch()
 

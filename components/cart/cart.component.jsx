@@ -12,7 +12,6 @@ const Cart = ({ cartToggle, count }) => {
   const removeItem = removeItemFromCart()
   const { priceTotal } = selectCartTotal()
   const { cartHidden, toggleCartHidden } = cartToggle()
-  console.log(count)
 
   return (
     <div className={styles.cart}>
@@ -33,7 +32,7 @@ const Cart = ({ cartToggle, count }) => {
               className={styles.removeButton}
               onClick={() => removeItem(cartItem.id)}
             >
-              X
+              &#x2715;
             </div>
           </div>
         ))}

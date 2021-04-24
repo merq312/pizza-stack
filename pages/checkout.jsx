@@ -1,6 +1,8 @@
 import UserForm from '../components/user-form/user-form.component'
 import {
   selectCartItems,
+  addItemToCart,
+  removeOneItemFromCart,
   removeItemFromCart,
   selectCartItemsCount,
   selectCartTotal,
@@ -10,6 +12,8 @@ import utilStyles from '../styles/utils.module.scss'
 
 const Checkout = () => {
   const { cartItems } = selectCartItems()
+  const addItem = addItemToCart()
+  const removeOneItem = removeOneItemFromCart()
   const removeItem = removeItemFromCart()
   const { priceTotal } = selectCartTotal()
   const { count } = selectCartItemsCount()
@@ -23,12 +27,16 @@ const Checkout = () => {
         <div className={styles.cartItem} key={cartItem.id}>
           <img src={cartItem.url} alt={cartItem.alt} />
           <div className={styles.itemName}>{cartItem.name}</div>
+          <div className={styles.addRemoveItems}>
+            <span onClick={() => addItem(cartItem)}>&#8593;</span>
+            <span onClick={() => removeOneItem(cartItem)}>&#8595;</span>
+          </div>
           <div className={styles.itemQuantity}>{cartItem.quantity}</div>
           <div
             className={styles.removeButton}
             onClick={() => removeItem(cartItem.id)}
           >
-            X
+            &#x2715;
           </div>
         </div>
       ))}

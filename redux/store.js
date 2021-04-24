@@ -26,12 +26,33 @@ const addItemToCart = (cartItems, itemToAdd) => {
   return [...cartItems, { ...itemToAdd, quantity: 1 }]
 }
 
+const removeItemFromCart = (cartItems, itemToRemove) => {
+  const existingCartItem = cartItems.find(
+    (cartItem) => cartItem.id === itemToRemove.id
+  )
+
+  if (existingCartItem.quantity === 1) {
+    return cartItems.filter((cartItem) => cartItem.id !== itemToRemove.id)
+  } else {
+    return cartItems.map((cartItem) =>
+      cartItem.id === itemToRemove.id
+        ? { ...cartItem, quantity: cartItem.quantity - 1 }
+        : cartItem
+    )
+  }
+}
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
       return {
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload),
+      }
+    case 'REMOVE_ONE_FROM_CART':
+      return {
+        ...state,
+        cartItems: removeItemFromCart(state.cartItems, action.payload),
       }
     case 'REMOVE_FROM_CART':
       return {
